@@ -66,6 +66,8 @@ request.onload = function () {
       container.appendChild(card2);
       card2.appendChild(h2);
       card2.appendChild(p2);
+     
+      
       
       //Facts with most upvotes
       data_filter = facts.filter(facts => facts.upvotes == maxUpvotes);
@@ -80,15 +82,33 @@ request.onload = function () {
       
       container.appendChild(card3);
       card3.appendChild(h3);
+
       
-      for (i in data_filter) {
-      p3.textContent += (data_filter[i].text);    
+      
+      const URL = "https://cors.io?https://cat-fact.herokuapp.com/facts";
+
+        const main = document.getElementById("p3");
+        p3.innerHTML = "<p>Loading...";
+
+        fetch(URL)
+          .then((response) => response.json())
+          .then((facts) => p3.innerHTML = getText(facts));
+
+        const getText = (facts) => {
+          const text = data.filter(votes => votes.upvotes == maxUpvotes)
+            .map((facts) => `<li>${facts.text}</li>`)
+            .join("\n");
+          return `<ul>${text}</ul>`;
+        };
+        card3.appendChild(p3);
+/*      
+     for (i in data_filter) {
+      p3.textContent += (data_filter[i].text);  
+      console.log(p3.textContent);
       card3.appendChild(p3); 
       }
+ */     
       
-     
-      
-    /*});*/
   } else {
     const errorMessage = document.createElement('div');
     errorMessage.textContent = `ERROR!`;
