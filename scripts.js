@@ -88,7 +88,6 @@ request.onload = function () {
       const URL = "https://cors.io?https://cat-fact.herokuapp.com/facts";
 
         const main = document.getElementById("p3");
-        p3.innerHTML = "<p>Loading...";
 
         fetch(URL)
           .then((response) => response.json())
