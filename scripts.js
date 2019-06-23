@@ -76,7 +76,7 @@ request.onload = function () {
       card3.setAttribute('class', 'card');
 
       const h3 = document.createElement('h1');
-      h3.textContent = "Facts With The Most Upvotes";
+      h3.textContent = "Facts With The Most Upvotes (" + maxUpvotes + ")";
 
       const p3 = document.createElement('p');
       
