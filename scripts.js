@@ -10,7 +10,9 @@ app.appendChild(logo);
 app.appendChild(container);
 
 var request = new XMLHttpRequest();
-request.open('GET', 'https://cors.io?https://cat-fact.herokuapp.com/facts');
+// request.open('GET', 'https://cors.io?https://cat-fact.herokuapp.com/facts');
+request.open('GET', 'https://cat-fact.herokuapp.com/facts');
+
 request.onload = function () {
 
   // Begin accessing JSON data here
@@ -85,8 +87,9 @@ request.onload = function () {
 
       
       
-      const URL = "https://cors.io?https://cat-fact.herokuapp.com/facts";
-
+//      const URL = "https://cors.io?https://cat-fact.herokuapp.com/facts";
+        const URL = "https://cat-fact.herokuapp.com/facts";
+    
         const main = document.getElementById("p3");
 
         fetch(URL)
